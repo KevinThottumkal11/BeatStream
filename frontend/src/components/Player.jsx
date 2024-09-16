@@ -5,7 +5,7 @@ const  Player = () => {
   return (
     <div className='h-[10%] bg-black flex justify-between items-center text-white px-4'>
         <div className='hidden lg:flex items-center gap-4'>
-            <img className='w-12' src={songsData[0].image} alt='' />
+            <img className='w-12' src={songsData[0].image} />
             <div>
                 <p>{songsData[0].name}</p>
                 <p>{songsData[0].desc.slice(0,12)}</p>
@@ -14,11 +14,11 @@ const  Player = () => {
 
         <div className='flex flex-col items-center gap-1 m-auto'>
             <div className='flex gap-4'>
-                <img className='w-4 cursor-pointer' src={assets.shuffle_icon} alt='' />
-                <img className='w-4 cursor-pointer' src={assets.prev_icon} alt='' />
-                <img className='w-4 cursor-pointer' src={assets.play_icon} alt='' />
-                <img className='w-4 cursor-pointer' src={assets.next_icon} alt='' />
-                <img className='w-4 cursor-pointer' src={assets.loop_icon} alt='' />
+                <img className='w-4 cursor-pointer' src={assets.shuffle_icon} />
+                <img className='w-4 cursor-pointer' src={assets.prev_icon} />
+                <img className='w-4 cursor-pointer' src={assets.play_icon} />
+                <img className='w-4 cursor-pointer' src={assets.next_icon} />
+                <img className='w-4 cursor-pointer' src={assets.loop_icon} />
             </div>
             <div className='flex items-center gap-5'>
                 <p>1:01</p>
@@ -36,7 +36,7 @@ const  Player = () => {
             <img className='w-4' src={assets.speaker_icon} />
             <img className='w-4' src={assets.volume_icon} />
             <div className='w-20 bg-slate-50 h-1 rounded'>
-                
+                {/* 42:07 */}
             </div>
             <img className='w-4' src={assets.mini_player_icon} />
             <img className='w-4' src={assets.zoom_icon} />
