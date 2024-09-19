@@ -26,8 +26,8 @@ const Sidebar = () => {
           </div>
 
           <div className='flex items-center gap-3'>
-          <img className='w-5' src={assets.arrow_icon} />
-          <img className="w-5" src={assets.plus_icon} />
+            <img className='w-5 cursor-pointer' src={assets.arrow_icon} />
+            <img className="w-5 cursor-pointer" src={assets.plus_icon} />
           </div>
         </div>
 
