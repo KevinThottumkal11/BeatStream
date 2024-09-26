@@ -1,4 +1,4 @@
-import { createContext, useRef, useState } from "react";
+import { createContext, useEffect, useRef, useState } from "react";
 import { songsData } from "../assets/assets";
 
 export const PlayerContext = createContext();
@@ -12,7 +12,7 @@ const PlayerContextProvider = (props) => {
     // state variables
     const [track, setTrack] = useState(songsData[0]);   // Default = 1st song
     const [playerStatus, setPlayerStatus] = useState(false);
-    const [time, SetTime] = useState({
+    const [time, setTime] = useState({
         currentTime: {
             seconds: 0,
             minutes: 0
@@ -33,6 +33,23 @@ const PlayerContextProvider = (props) => {
         setPlayerStatus(false)
     }
 
+    useEffect(() => {
+        setTimeout(() => {
+            audioRef.current.ontimeupdate = () => {
+                setTime({
+                    currentTime: {
+                        seconds: Math.floor(audioRef.current.currentTime % 60),
+                        minutes: Math.floor(audioRef.current.currentTime / 60)
+                    },
+                    totalTime: {
+                        seconds: Math.floor(audioRef.current.duration % 60),
+                        minutes: Math.floor(audioRef.current.duration % 60)
+                    }
+                })
+            }
+        }, 1000)    // 1 sec
+    }, [audioRef])
+
     const contextValue = {
         audioRef,
         seekPlayer,
@@ -42,7 +59,7 @@ const PlayerContextProvider = (props) => {
         playerStatus,
         setPlayerStatus,
         time,
-        SetTime,
+        setTime,
         play,
         pause,
     }
