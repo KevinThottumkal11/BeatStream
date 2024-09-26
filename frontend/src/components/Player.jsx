@@ -4,8 +4,7 @@ import { PlayerContext } from '../context/PlayerContext'
 
 const  Player = () => {
 
-    const {seekPlayer, seekBar, playStatus, play, pause} = useContext(PlayerContext)
-
+    const {seekPlayer, seekBar, playerStatus, play, pause} = useContext(PlayerContext)
   return (
     <div className='h-[10%] bg-black flex justify-between items-center text-white px-4'>
         <div className='hidden lg:flex items-center gap-4'>
@@ -20,8 +19,10 @@ const  Player = () => {
             <div className='flex gap-4'>
                 <img className='w-4 cursor-pointer' src={assets.shuffle_icon} />
                 <img className='w-4 cursor-pointer' src={assets.prev_icon} />
-                <img onClick={play} className='w-4 cursor-pointer' src={assets.play_icon} />
-                <img onClick={pause} className='w-4 cursor-pointer' src={assets.pause_icon} />
+                {playerStatus
+                ?<img onClick={pause} className='w-4 cursor-pointer' src={assets.pause_icon} alt='' />
+                :<img onClick={play} className='w-4 cursor-pointer' src={assets.play_icon} alt='' />
+                }
                 <img className='w-4 cursor-pointer' src={assets.next_icon} />
                 <img className='w-4 cursor-pointer' src={assets.loop_icon} />
             </div>
