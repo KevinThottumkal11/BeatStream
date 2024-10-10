@@ -1,7 +1,7 @@
 import { v2 as cloudinary } from 'cloudinary'
 import albumModel from '../models/albumModel.js'
 
-const addAlbum = async(req, res) => {
+export const addAlbum = async(req, res) => {
     try {
         
     } catch (error) {
@@ -9,7 +9,7 @@ const addAlbum = async(req, res) => {
     }
 }
 
-const listAlbum = async (req, res) => {
+export const listAlbum = async (req, res) => {
     try {
         
     } catch (error) {
@@ -17,7 +17,7 @@ const listAlbum = async (req, res) => {
     }
 }
 
-const removeAlbum = async (req, res) => {
+export const removeAlbum = async (req, res) => {
     try {
         
     } catch (error) {
@@ -25,4 +25,3 @@ const removeAlbum = async (req, res) => {
     }
 }
 
-export default {addAlbum, listAlbum, removeAlbum}
