@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(cors()) // frontend to connect with backend
 
 // initializing routes
-app.use("api/song", songRouter)
+app.use("/api/song", songRouter)
 
 app.get('/', (req, res) => res.send("API Working"))
 
